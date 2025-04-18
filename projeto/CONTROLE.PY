@@ -2,6 +2,8 @@ from PyQt5 import uic, QtWidgets
 import mysql.connector
 app = QtWidgets.QApplication([]) 
 formulario = uic.loadUi("formulario.ui")
+#importando bibliotecas pyqt5 e tools, importando banco de dados e o formulário em .ui
+
 
 banco = mysql.connector.connect(
     host="localhost",
@@ -9,7 +11,7 @@ banco = mysql.connector.connect(
     passwd="",
     database="cadastro_produtos"
 )
-
+#conexão com banco de dados
 
 
 def funcao_principal():
@@ -43,7 +45,7 @@ def funcao_principal():
     print(dados)
     print("sucesso ao rodar função principal")
     cursor.close()
-
+#função principal
 
 formulario.pushButton.clicked.connect(funcao_principal)
 formulario.setGeometry(100, 100, 400, 300)  # Posição e tamanho fixos
